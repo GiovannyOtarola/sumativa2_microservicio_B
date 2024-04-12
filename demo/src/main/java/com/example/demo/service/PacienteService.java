@@ -11,4 +11,5 @@ public interface PacienteService {
     Paciente createPaciente(Paciente paciente);
     Paciente updatePaciente(Long id, Paciente paciente);
     void deletePaciente(Long id);
+    int getCantidadConsultasMedicas(Long id);
 }

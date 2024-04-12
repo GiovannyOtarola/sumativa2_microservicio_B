@@ -60,6 +60,12 @@ public class PacienteController {
         }
         return ResponseEntity.ok(paciente);
     }
+    @GetMapping("/{id}/consultasMedicas/cantidad")
+    public ResponseEntity<Integer> getCantidadConsultasMedicas(@PathVariable Long id) {
+        int cantidadConsultas = pacienteService.getCantidadConsultasMedicas(id);
+        return ResponseEntity.ok(cantidadConsultas);
+    }
+
 
     @PostMapping
     public ResponseEntity<Object> createPaciente(@Validated @RequestBody Paciente paciente){

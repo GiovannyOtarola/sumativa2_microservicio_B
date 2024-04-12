@@ -15,6 +15,8 @@ public class PacienteServiceImpl implements PacienteService{
     @Autowired
     private PacienteRepository pacienteRepository;
 
+   
+
     @Override
     public List<Paciente> getAllPacientes(){
         return pacienteRepository.findAll();
@@ -45,4 +47,15 @@ public class PacienteServiceImpl implements PacienteService{
         pacienteRepository.deleteById(id);
     }
 
+    @Override
+    public int getCantidadConsultasMedicas(Long id) {
+        Optional<Paciente> optionalPaciente = pacienteRepository.findById(id);
+        if (optionalPaciente.isPresent()) {
+            Paciente paciente = optionalPaciente.get();
+            List<ConsultaMedica> consultasMedicas = paciente.getConsultasMedicas();
+            return consultasMedicas != null ? consultasMedicas.size() : 0;
+        } else {
+            return 0;
+        }
+    }
 }
