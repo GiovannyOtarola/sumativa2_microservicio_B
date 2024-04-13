@@ -60,6 +60,7 @@ public class PacienteController {
         }
         return ResponseEntity.ok(paciente);
     }
+    
     @GetMapping("/{id}/consultasMedicas/cantidad")
     public ResponseEntity<Integer> getCantidadConsultasMedicas(@PathVariable Long id) {
         int cantidadConsultas = pacienteService.getCantidadConsultasMedicas(id);
