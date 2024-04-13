@@ -38,7 +38,6 @@ public class ConsultaMedica {
 
     
     @NotNull(message = "fecha obligatoria")
-    @NotBlank(message = "No puede ingresar una fecha vacia")
     @Column(name = "fecha")
     private LocalDate fecha;
 
