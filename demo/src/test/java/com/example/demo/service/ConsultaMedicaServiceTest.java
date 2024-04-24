@@ -1,6 +1,5 @@
 package com.example.demo.service;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -34,7 +33,7 @@ public class ConsultaMedicaServiceTest {
         consultaMedica.setId(1L);
 
         when(consultaMedicaRepositoryMock.save(any())).thenReturn(consultaMedica);
-        
+
         ConsultaMedica resultado = consultaMedicaRepositoryMock.save(consultaMedica);
 
         
