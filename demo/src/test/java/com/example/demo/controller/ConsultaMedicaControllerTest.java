@@ -2,8 +2,7 @@ package com.example.demo.controller;
 import static org.mockito.Mockito.when;
 
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.List;
+
 import java.util.Optional;
 
 import org.hamcrest.Matchers;
