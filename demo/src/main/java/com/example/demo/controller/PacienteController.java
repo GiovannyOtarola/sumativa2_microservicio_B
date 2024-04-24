@@ -1,7 +1,8 @@
 package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -79,11 +80,9 @@ public class PacienteController {
     }
     
     @GetMapping("/{id}/consultasMedicas/cantidad")
-    public EntityModel<Integer> getCantidadConsultasMedicas(@PathVariable Long id) {
+    public ResponseEntity<Integer> getCantidadConsultasMedicas(@PathVariable Long id) {
         int cantidadConsultas = pacienteService.getCantidadConsultasMedicas(id);
-        return EntityModel.of(cantidadConsultas,
-        WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(this.getClass()).getPacienteById(id)).withSelfRel(),
-        WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(this.getClass()).getAllPacientes()).withRel("all-pacientes"));
+        return ResponseEntity.ok(cantidadConsultas);
     }
 
 
