@@ -33,11 +33,11 @@ public class ConsultaMedicaControllerTest {
     @Test
     public void obtenerConsultaMedicaPorIdTest() throws Exception {
         ConsultaMedica consultaMedica = new ConsultaMedica();
-    consultaMedica.setMotivoConsulta("Dolor cabeza");
-    consultaMedica.setDiagnostico("le duele la cabeza");
-    consultaMedica.setFecha(LocalDate.of(2024, 4, 11));
-    consultaMedica.setPacienteid(1L);
-    consultaMedica.setId(1L);
+        consultaMedica.setMotivoConsulta("Dolor cabeza");
+        consultaMedica.setDiagnostico("le duele la cabeza");
+        consultaMedica.setFecha(LocalDate.of(2024, 4, 11));
+        consultaMedica.setPacienteid(1L);
+        consultaMedica.setId(1L);
 
     when(consultaMedicaServiceMock.getConsultaMedicaById(1L)).thenReturn(Optional.of(consultaMedica));
 
