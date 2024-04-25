@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.example.demo.model.*;
 import com.example.demo.service.PacienteService;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -19,11 +21,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.hateoas.EntityModel;
+
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 
 
 import java.util.stream.Collectors;
+
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -82,7 +87,7 @@ public class PacienteController {
     @GetMapping("/{id}/consultasMedicas/cantidad")
     public ResponseEntity<Integer> getCantidadConsultasMedicas(@PathVariable Long id) {
         int cantidadConsultas = pacienteService.getCantidadConsultasMedicas(id);
-        return ResponseEntity.ok(cantidadConsultas);
+         return ResponseEntity.ok().body(cantidadConsultas);
     }
 
 
